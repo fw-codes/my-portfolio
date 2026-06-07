@@ -21,8 +21,8 @@ export default function Projects()
 <li>Continuously maintaining and expanding the portfolio to reflect ongoing learning and development</li>
 
             </ul>
-            <a href="https://fw-bitefusion.vercel.app/h.html"><button>Live Site</button></a>
-           <a href="https://github.com/fw-codes/E-commerce-Website"><button>Github Repo</button></a>
+            <a href="https://fw-codes.vercel.app"><button>Live Site</button></a>
+           <a href="https://github.com/fw-codes/my-portfolio"><button>Github Repo</button></a>
     </div>
 
 </div>
