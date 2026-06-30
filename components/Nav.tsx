@@ -5,76 +5,40 @@ import { usePathname } from "next/navigation"
 import { useState } from "react"
 import { FaBars } from "react-icons/fa"
 
-export default function Nav(){
+export default function Nav() {
+  const pathname = usePathname()
+  const [menuOpen, setMenuOpen] = useState(false)
 
-const pathname = usePathname()
+  const navLinks = [
+    { name: "HOME", path: "/" },
+    { name: "ABOUT", path: "/About" },
+    { name: "SKILLS", path: "/Skills" },
+    { name: "PROJECTS", path: "/Projects" },
+    { name: "CONTACT", path: "/Contact" }
+  ]
 
-const [menuOpen,setMenuOpen]=useState(false)
+  return (
+    <nav>
+      <div
+        className="menu-icon"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <FaBars />
+      </div>
 
-return(
-
-<nav>
-
-<div
-className="menu-icon"
-onClick={()=>setMenuOpen(!menuOpen)}
->
-
-<FaBars/>
-
-</div>
-
-<ul className={menuOpen ? "nav-links active" : "nav-links"}>
-
-<li>
-<Link
-href="/"
-className={pathname === "/" ? "active" : ""}
->
-HOME
-</Link>
-</li>
-
-<li>
-<Link
-href="/About"
-className={pathname === "/About" ? "active" : ""}
->
-ABOUT
-</Link>
-</li>
-
-<li>
-<Link
-href="Skills"
-className={pathname === "/Skills" ? "active" : ""}
->
-SKILLS
-</Link>
-</li>
-
-<li>
-<Link
-href="/Projects"
-className={pathname === "/Projects" ? "active" : ""}
->
-PROJECTS
-</Link>
-</li>
-
-<li>
-<Link
-href="/Contact"
-className={pathname === "/Contact" ? "active" : ""}
->
-CONTACT
-</Link>
-</li>
-
-</ul>
-
-</nav>
-
-)
-
+      <ul className={menuOpen ? "nav-links active" : "nav-links"}>
+        {navLinks.map((link) => (
+          <li key={link.path}>
+            <Link
+              href={link.path}
+              className={pathname === link.path ? "active" : ""}
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
 }

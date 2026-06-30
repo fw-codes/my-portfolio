@@ -358,7 +358,7 @@ box-shadow:0 0 20px rgba(255,110,180,.3);
 }
 
 
-/* common icon style */
+/* icon style */
 
 .icon{
 
@@ -379,6 +379,7 @@ animation:float 3s infinite ease-in-out;
 transition:0.4s;
 
 cursor:pointer;
+
 
 }
 
@@ -418,11 +419,11 @@ left:32%;
 top:8%;
 right:10%;
 }
-.github{
+.react{
 top:8%;
 left:55%;}
 
-.react{
+.node{
 top:30%;
 left:10%;
 }
@@ -432,39 +433,39 @@ top:30%;
 left:32%;
 }
 
-.java{
+.sql{
 top:30%;
 right:38%;
 }
 
-.opencv{
+.mongo{
 top:30%;
 right:10%;
 }
 
-.node{
+.cpp{
 top:55%;
 left:10%;
 }
 
 
-.python{
+.opencv{
 top: 55%;
 right:10%;
 }
 
 
-.sql{
+.java{
 top:55%;
 right:38%;
 }
 
-.mongo{
+.python{
 top: 55%;
 left:32%;
 }
 
-.cpp{
+.github{
 top: 80%;
 left:10%;
 }
@@ -682,6 +683,41 @@ transition: 0.3s ease;
   line-height: 25px;
  text-align: center;
 }
+
+.menu-icon {
+  display: none;
+}
+
+
+
+.role {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #ff6eb4;
+  min-height: 40px;
+}
+
+.cursor {
+  width: 3px;
+  height: 28px;
+  background: #39d98a;
+  display: inline-block;
+  animation: blink 1.0s infinite;
+  border-radius: 2px;
+  box-shadow: 0 0 8px #39d98a;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+
 
 @media (max-width:768px)
 {
